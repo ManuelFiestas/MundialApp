@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Manuel
+Build-Jdk: 9
+Implementation-Title: MundialApp
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.spring
+Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-
+ starter-parent/MundialApp/
+Created-By: Maven Integration for Eclipse
+
