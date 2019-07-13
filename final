@@ -1,0 +1,146 @@
+
+Mala arquitectura
+compleja, fragil, dificil de probar, dificil de mantener
+Buena arquitectura
+simple, entendible, flexible, facil de probar, facil de mantener
+
+Arquitectura Tradicional en capas
+Presentation-> Business -> data
+Users
+User Interface
+Business Logic
+Data Access
+Database
+
+Layer vs Tiers (Capas vs niveles)
+layer <--> in process <--> layer
+tier <-out of process-> tier
+layer: presentation -> service ->domain -> persistence
+tier: UI -> API -> Bussiness Logic -> Data Access
+
+Arquitectura centrada en la base de datos
+UI
+Bussiness Logic
+Data Access
+Database
+
+Patrones de la capa de negocio:
+- Transaction Script (Procedural)
+- Table Module  (Data Driven)
+- Active Record  (Data Driven)
+- Domain Model  (Business Driven)
+
+Transaction Script
+- The resulting application can end up being quite tangled web of   routines without a clear structure.
+- Dificil/imposible de entender, probar y mantener
+- Tarde o temprano terminamos con código inmantenible.
+
+DOmain Model Pattern
+- Logica de negocio esparcida por toda la coleccion de clases.
+- Muchas clases corresponden a conceptos del mundo real: ordenes, clientes..
+- Muchas clases son objetos reales teniendo los dos:
+  estado (campos) y comportamiento (metodos qque actuan en el   estado.)
+
+El legado de Los EJB
+- Java es un lenguaje orientado a objetos
+- Muchas aplicaciones empresariales Java son escritas en estilo   procedural
+
+Empiezan a crecer en popularidad los modelos de dominio
+- POJOs
+  Plain Old JAva Objects
+  Leverage OO features of Java
+- O/R mapping frameworks for persisting POJOs
+  Hibernate
+  JPA
+- Spring AOP and AspectJ for handling cross cutting concerns:
+  Transaction Managment
+  Security
+  Logging
+  Auditing
+
+Beneficios del Modelo de Dominio
+- Improved mantainability
+  . the desing reflect reality
+  . key domain classes are represented by classes
+  . the desing is more modular
+- Improved testability 
+  . Small clases that be tested in isolation
+- Improved reusability
+  . Clases can be used in other applications
+-  Building a domain model
+ . Creates shared understanding
+ . Develops an ubiquitous language
+
+Arquitectura limpia
+. INDEPENDIENTE DE FRAMEWORK
+  Usar frameworks como herramientas , no para llenar tu sistema   de sus restricciones
+. FACIL DE PROBAR
+  Las reglas de negocio pueden probarse sin:
+  UI
+  Base de Datos
+  Servidor Web
+  Cualquier otro elemento externo
+.INDEPENDIENTE DE LA UI
+  La UI puede cambiar facilmente sin cambiar el resto del sistema. por ejemplo la interfaz web puede ser reemplazada por una interfaz sin consola sin cambiar nada.
+. INDEPENDIENTE DE LA BD
+. INDEPENDIENTE DE AGENTES EXTERNOS
+
+nota: cuando cualquier parte se vuelve obsoleta (bd o framework etc) se puede reemplazar con minimo esfuerzo.
+
+Otros puntos:
+espacio es esncial
+usabilidad es esencial
+material de construccion es un detalle
+decoracion es un detalle
+dominio es esencial
+caso de uso son esenciales
+presentacion es un detalle
+persistencia es un detalle
+
+DDD
+Entidades
+Value Objects
+Aggregates
+Repositories
+Bounded contexts
+Domain events
+
+COnceptos principales de DDD
+. Ubitoquos languaje
+. Bounded context
+. Core domain (emmfoca en lo mas importante del sistema)
+
+Capas de DDD
+user interface
+Application
+Domain
+Infrastructure
+
+Beneficios del DDD
+Flexible
+Porblema desde la perspectiva/vision del cliente
+Camino a traves de un problema muy complejo
+Logica de negocio reside en un solo lugar
+Muchos y buenos patrones para aprovechar
+
+. tiempo y esfuerzo
+discutir y modelar el problema con expertos de dominio
+aislar la logica del dominio de otras partes de la aplicacion.
+.curva de aprendizaje
+  nuevos principos, patrones y procesos
+
+
+
+ . 
+
+
+
+
+
+
+
+
+
+
+
+
